@@ -7,7 +7,7 @@ import morgan from "morgan";
 
 /* ROUTE IMPORTS */
 // Uncomment these lines when you have the respective routes implemented
-// import dashboardRoutes from "./routes/dashboardRoutes";
+import dashboardRoutes from "./routes/dashboardRoutes";
 // import productRoutes from "./routes/productRoutes";
 // import userRoutes from "./routes/userRoutes";
 // import expenseRoutes from "./routes/expenseRoutes";
@@ -27,13 +27,11 @@ app.use(cors());
 
 /* ROUTES */
 // Uncomment these lines when you have the respective routes implemented
-// app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
+ app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
 // app.use("/products", productRoutes); // http://localhost:8000/products
 // app.use("/users", userRoutes); // http://localhost:8000/users
 // app.use("/expenses", expenseRoutes); // http://localhost:8000/expenses
-app.get("/hello",(req,res)=>{
-    res.send("hello word");
-})
+
 
 /* SERVER */
 const port = Number(process.env.PORT) || 3001;

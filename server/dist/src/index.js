@@ -11,7 +11,7 @@ const helmet_1 = __importDefault(require("helmet"));
 const morgan_1 = __importDefault(require("morgan"));
 /* ROUTE IMPORTS */
 // Uncomment these lines when you have the respective routes implemented
-// import dashboardRoutes from "./routes/dashboardRoutes";
+const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
 // import productRoutes from "./routes/productRoutes";
 // import userRoutes from "./routes/userRoutes";
 // import expenseRoutes from "./routes/expenseRoutes";
@@ -27,13 +27,10 @@ app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use((0, cors_1.default)());
 /* ROUTES */
 // Uncomment these lines when you have the respective routes implemented
-// app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
+app.use("/dashboard", dashboardRoutes_1.default); // http://localhost:8000/dashboard
 // app.use("/products", productRoutes); // http://localhost:8000/products
 // app.use("/users", userRoutes); // http://localhost:8000/users
 // app.use("/expenses", expenseRoutes); // http://localhost:8000/expenses
-app.get("/hello", (req, res) => {
-    res.send("hello word");
-});
 /* SERVER */
 const port = Number(process.env.PORT) || 3001;
 app.listen(port, "0.0.0.0", () => {
